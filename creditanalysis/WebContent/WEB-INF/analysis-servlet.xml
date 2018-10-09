@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:mvc="http://www.springframework.org/schema/mvc"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+ http://www.springframework.org/schema/mvc
+ 
+ 
+
+http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+ 
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+<context:component-scan base-package="com.manipal"/>
+<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+<property name="prefix" value="/WEB-INF/"/>
+<property name="suffix" value=".jsp"/>
+</bean>
+
+<context:annotation-config/>
+<bean id="oracleDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+<property name="url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
+<property name="username" value="hr"/>
+<property name="password" value="hr"/>
+</bean>
+
+<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate" autowire="constructor"/>
+<bean id="mydao" class="com.manipal.dao.MyDao"></bean>
+<bean id ="myservice" class="com.manipal.service.MyService"/>
+
+  <mvc:resources mapping="/resources/**" location="/resources/theme/"  
+	cache-period="31556926"/>
+
+    <mvc:annotation-driven />
+
+
+
+
+</beans>

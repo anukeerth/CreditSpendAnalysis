@@ -1,0 +1,67 @@
+<html>
+<head>
+<link rel="icon" href="resources/theme/CSS/favicon.png" type="image/gif" sizes="16x16">   
+<title>
+    CreditCardAnalysis
+</title>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+    <link rel="stylesheet" type="text/css" href="resources/theme/CSS/style1.css">
+    
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js">
+    </script>
+    <script type="text/javascript">
+
+/* function disableBackButton()
+ {
+//  location.href("index.html");
+
+ }
+if(window.history.forward(1) != null)
+         window.history.forward(1); */
+</script>
+    
+    </head>
+   
+<body>
+
+ <script>
+    $(document).ready(function() {
+        function disableBack() { window.history.forward() }
+
+        window.onload = disableBack();
+        window.onpageshow = function(evt) { if (evt.persisted) disableBack() }
+    });
+</script>
+ 
+    <div class="loginbox">
+    <img src="resources/theme/CSS/Q.png" class="avatar">
+
+        <h1>STANDARD CHARTERED</h1>
+        <!-- <form name ="login" onsubmit="return validation()"> 
+            <p>Username</p>
+            <input type="text" name="uname" placeholder="">
+            <p>Password</p>
+            <input type="password" name="pwd" placeholder=" ">
+            <input type="button" value="Login" onclick="index.html"/>
+        </form> -->
+            <form action="test/login" method="post">
+            <p>Username</p>
+            <input type="text" name="user" placeholder=" ">
+            <p>Password</p>
+            <input type="password" name="pass" placeholder=" ">
+            <input type="submit"  value="Login">
+           
+        </form>
+        
+        
+        <script type="text/javascript">
+    </script>
+    </div>
+    </body>
+        
+    
+</html>
